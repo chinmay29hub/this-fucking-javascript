@@ -28,9 +28,47 @@ const introducer = (name, shirt) => {
 //     console.log(fruit)
 // }
 
-const numbers = [1,2,3,4,5,6]
-let temp = 0
-for (const number of numbers) {
-    temp += number
+// const numbers = [1,2,3,4,5,6]
+// let temp = 0
+// for (const number of numbers) {
+//     temp += number
+// }
+// console.log(temp)
+
+// const max = (numbers) => {
+//   const count = {}
+//   for (const number of numbers) {
+//     if (number in count) {
+//       count[number]++
+//     } else {
+//       count[number] = 1
+//     }
+//   }
+
+//   return count
+// }
+
+// console.log(max([1,2,3,4,4,4,5,5,6,6,7,8,9]))
+
+const wordcount = (sentence) => {
+  const count = {}
+  for (const number of sentence.split(" ")) {
+    if (number in count) {
+      count[number]++
+    } else {
+      count[number] = 1
+    }
+  }
+
+  return count
 }
-console.log(temp)
+
+// console.log(wordcount("Hello World Hello Hello Hello World There"))
+
+function sum(numbers) {
+  return numbers.reduce((prev, nex) => {
+    return prev + nex
+  })
+}
+
+// console.log(sum([1,2,3,4]))
