@@ -72,3 +72,7 @@ function sum(numbers) {
 }
 
 // console.log(sum([1,2,3,4]))
+
+fruits = ["🍎", "🍌", "🍊", "🫐"]
+
+console.log(fruits[Math.floor(Math.random() * fruits.length)])
