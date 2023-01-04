@@ -2,21 +2,18 @@
 // .then - Promises
 // asynchronous programming
 
-// stuff you don't have to wait for
-console.log('run 1st')
+const image = document.getElementById("dogImage")
 
-const dogImageDiv = document.getElementById('dogImage')
-const dogButton = document.getElementById('dogButton')
-
-// stuff you have to wait for
-const getNewDog = () => {
-  fetch('https://dog.ceo/api/breeds/image/random')
-    .then(response => response.json())
-    .then(json => {
-      dogImageDiv.innerHTML = `<img src='${json.message}' height=300 width=300/>`
-    })
+const fetchImage = () => {
+  fetch("https://dog.ceo/api/breeds/image/random").then(
+  response => response.json()
+).then(
+  json => image.innerHTML = `<img src="${json.message}" style="height: 30%; width: 40%;">`
+)
 }
 
-dogButton.onclick = () => getNewDog()
-  
-console.log('run 3rd')
+const btn = document.getElementById("dogButton")
+btn.onclick = () => {
+  fetchImage()
+}
+
