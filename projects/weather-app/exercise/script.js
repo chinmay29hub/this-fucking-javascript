@@ -14,12 +14,18 @@ let API_KEY = "a8e71c9932b20c4ceb0aed183e6a83bb";
  * HINT: URL should look like this: 
  * https://api.openweathermap.org/data/2.5/weather?q=detroit&appid=a8e71c9932b20c4ceb0aed183e6a83bb&units=imperial
  */
-getWeatherData = (city) => {
+const getWeatherData = (city) => {
   const URL = "https://api.openweathermap.org/data/2.5/weather";
+  const FULL_URL = `${URL}?q=${city}&appid=${API_KEY}&units=imperial`
   //HINT: Use template literals to create a url with input and an API key
 
   //CODE GOES HERE
+  const weatherPromise  = fetch(FULL_URL);
+  return weatherPromise.then((response) => {
+    return response.json();
+  })
 }
+// getWeatherData("arizona")
 
 /**
  * Retrieve city input and get the weather data
@@ -28,7 +34,18 @@ getWeatherData = (city) => {
 searchCity = () => {
   const city = document.getElementById('city-input').value;
   // CODE GOES HERE
+  getWeatherData(city).then((res)=>{
+    showWeatherData(res);
+  }).catch((error)=>{
+    console.log(error);
+    console.log("Something happend");
+  })
 
+  const end = document.getElementById("clr-btn")
+// console.log(end)
+  end.onclick = () => {
+    clear()
+}
 }
 
 /**
@@ -37,6 +54,35 @@ searchCity = () => {
  */
 showWeatherData = (weatherData) => {
   //CODE GOES HERE
+  const city = document.getElementById("city-name")
+  const weather = document.getElementById("weather-type")
+  const temperature = document.getElementById("temp")
+  const minTemp = document.getElementById("min-temp")
+  const maxTemp = document.getElementById("max-temp")
+
+  city.textContent = weatherData.name;
+  weather.textContent = weatherData.weather[0].main;
+  temperature.textContent = weatherData.main.temp;
+  minTemp.textContent = weatherData.main.temp_min;
+  maxTemp.textContent = weatherData.main.temp_max;
   
+}
+
+
+
+const clear = () => {
+  const cityIn = document.getElementById("city-input")
+  const city = document.getElementById("city-name")
+  const weather = document.getElementById("weather-type")
+  const temperature = document.getElementById("temp")
+  const minTemp = document.getElementById("min-temp")
+  const maxTemp = document.getElementById("max-temp")
+
+  cityIn.value = ""
+  city.textContent = "----"
+  weather.textContent = "----"
+  temperature.innerHTML= `<span id="temp">--</span>`
+  minTemp.innerHTML = `<span id="min-temp">--</span>`
+  maxTemp.innerHTML = `<span id="max-temp">--</span>`
 }
 

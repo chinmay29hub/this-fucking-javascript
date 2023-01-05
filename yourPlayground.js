@@ -75,4 +75,8 @@ function sum(numbers) {
 
 fruits = ["🍎", "🍌", "🍊", "🫐"]
 
-console.log(fruits[Math.floor(Math.random() * fruits.length)])
+// console.log(fruits[Math.floor(Math.random() * fruits.length)])
+
+setTimeout(() => {
+  console.log("Hello World")
+}, 3000);
