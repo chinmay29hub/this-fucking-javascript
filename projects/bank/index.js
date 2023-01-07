@@ -184,29 +184,61 @@ class Bank {
   }
   
   balance () {
-    console.log("Your Balance : $"+this.money)
+    return this.money
   }
 
   withdraw (value = 0) {
-    if (value > this.money) {
-      console.log("Insufficient Balace dude")
-      return
-    }
+    // if (value > this.money) {
+    //   console.log("Insufficient Balace dude")
+    //   return
+    // }
     this.money -= value
-    console.log(`Your new balance after withdrawing : $${this.money}`)
+    // console.log(`Your new balance after withdrawing : $${this.money}`)
   }
 
   deposit (value = 0) {
     this.money += value
-    console.log(`Your new balance after deposit : $${this.money}`)
+    // console.log(`Your new balance after deposit : $${this.money}`)
   }
 }
 
 chinmay = new Bank(100)
-chinmay.balance()
-chinmay.withdraw(50)
-chinmay.deposit(100)
-chinmay.deposit(500)
-chinmay.balance()
-chinmay.withdraw(50)
-chinmay.withdraw(1000)
+// chinmay.balance()
+// chinmay.withdraw(50)
+// chinmay.deposit(100)
+// chinmay.deposit(500)
+// chinmay.balance()
+// chinmay.withdraw(50)
+// chinmay.withdraw(1000)
+
+
+const depositBtn = document.getElementById("deposit")
+const withdrawBtn = document.getElementById("withdraw")
+const uiBalance = document.getElementById("balance")
+const insufficient = document.getElementById("insufficient")
+const getDepMoney = document.getElementById("money-deposit")
+const getWithMoney = document.getElementById("money-withdraw")
+
+
+const updateBalance = () => {
+    uiBalance.innerHTML = `Chinmay Sonawane's Balance : $${chinmay.balance()}`
+}
+updateBalance()
+
+depositBtn.onclick = () => {
+    chinmay.deposit(Number(getDepMoney.value))
+    updateBalance()
+    getDepMoney.value = ""
+}
+
+withdrawBtn.onclick = () => {
+
+    if (Number(getWithMoney.value) > chinmay.balance()) {
+        insufficient.innerHTML = `You have insufficent balance`
+        return
+    }
+
+    chinmay.withdraw(Number(getWithMoney.value))
+    updateBalance()
+    getWithMoney.value = ""
+}
