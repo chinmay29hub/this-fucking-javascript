@@ -65,9 +65,9 @@ const updateGame = (p1,p2,gameState) => {
 // qazi.attackDmg 👉 7
 class Player {
   constructor(name, health, attackDamage) {
-    this.name = name;
-    this.health = health;
-    this.attackDmg = attackDamage;
+    this.name = name
+    this.health = health
+    this.attackDmg = attackDamage
   }
   // ** Attack an enemy with a random number from 0 to YOUR attackDmg bonus **
   strike (player, enemy, attackDmg) {
@@ -82,6 +82,7 @@ class Player {
     updateGame(p1, p2, game.isOver)
 
     //  Return a message of 'player name attacks enemy name for damageAmount'
+    
     return `${player.name} attacks ${enemy.name} for ${damageAmount} damage`
   }
   // ** Heal the player for random number from  1 to 5 **
@@ -91,7 +92,10 @@ class Player {
     const hpAmount = Math.ceil(Math.random() * 5)
 
     // Add hpAmount to players health
-    player.health += hpAmount
+    if (player.health <= 100) {
+      player.health += hpAmount
+    }
+    
 
     //  Update the game and DOM with updateGame()
     updateGame(p1, p2, game.isOver)
@@ -106,7 +110,7 @@ class Player {
 // game.isOver 👉 false
 class Game {
   constructor() {
-    this.isOver = false;
+    this.isOver = false
   }
 
   // ** If the game is over and a player has 0 health declare the winner! **
@@ -175,7 +179,7 @@ const game = new Game()
 updateGame(p1, p2, game.isOver)
 
 // ** Save intial isOver from the game object inside this variable **
-let gameState;
+let gameState
 
 
 // ** Add a click listener to the simulate button that runs the play() method on click and pass in the players **
@@ -196,7 +200,7 @@ document.addEventListener('keydown', function(e) {
     }
     
 
-});
+})
 
 document.addEventListener('keydown', function(e) {
   
@@ -209,7 +213,7 @@ document.addEventListener('keydown', function(e) {
 
     
 
-});
+})
 
 // ** Player 2 Controls **
 document.addEventListener('keydown', function(e) {
@@ -223,7 +227,7 @@ document.addEventListener('keydown', function(e) {
 
     
 
-});
+})
 
 document.addEventListener('keydown', function(e) {
   // if you press l AND the player health is greater than 0 AND isOver is still false then heal()
@@ -234,10 +238,47 @@ document.addEventListener('keydown', function(e) {
     document.getElementById("p2heal").play()
   }
 
-    
+})
 
-});
+// function temp () {
+//   document.getElementById("p1attack").play()
+// }
 
+const player1Attack = document.getElementById("attack1")
+player1Attack.onclick = () => {
+  if (p2.health > 0 && game.isOver == false) {
+    p1.strike(p1, p2, p1.attackDmg)
+    // After striking then play attack sound
+    document.getElementById("p1attack").play()
+  }
+}
+
+const player2Attack = document.getElementById("attack2")
+player2Attack.onclick = () => {
+  if (p1.health > 0 && game.isOver == false) {
+    p2.strike(p2, p1, p2.attackDmg)
+    // After striking then play attack sound
+    document.getElementById("p2attack").play()
+  }
+}
+
+const player1heal = document.getElementById("heal1")
+player1heal.onclick = () => {
+  if (p2.health > 0) {
+    p1.heal(p1)
+    // After healing then play heal sound
+    document.getElementById("p1heal").play()
+  }
+}
+
+const player2heal = document.getElementById("heal2")
+player2heal.onclick = () => {
+  if (p1.health > 0) {
+    p2.heal(p2)
+    // After healing then play heal sound
+    document.getElementById("p2heal").play()
+  }
+}
 
 
 

@@ -91,7 +91,7 @@ body {
 /*   background: yellow; */
 }
 
-#attack {
+#attack1 {
   height: 30px;
   width: 60px;
   border-radius: 50px;
@@ -101,7 +101,27 @@ body {
 
 }
 
-#heal {
+#attack2 {
+  height: 30px;
+  width: 60px;
+  border-radius: 50px;
+  border:none;
+  background: #FFFF01;
+  outline: none;
+
+}
+
+#heal1 {
+  height: 30px;
+  width: 60px;
+  border-radius: 50px;
+  border:none;
+  background: #7DFFFF;
+  outline: none;
+
+}
+
+#heal2 {
   height: 30px;
   width: 60px;
   border-radius: 50px;
