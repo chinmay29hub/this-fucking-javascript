@@ -9,4 +9,3 @@
 [Homepage](https://chinmay29hub.github.io/this-fucking-javascript/)
 
 </h2>
-<hr>
