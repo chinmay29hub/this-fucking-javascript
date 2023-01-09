@@ -71,7 +71,7 @@
 <details>
 <summary>Netflix - Fetch Movies</summary>
 
-8. [Netflix - Fetch Movies](https://chinmay29hub.github.io/this-fucking-javascript/projects/create-netflix/exercise/index.html)
+9. [Netflix - Fetch Movies](https://chinmay29hub.github.io/this-fucking-javascript/projects/create-netflix/exercise/index.html)
 
 </details>
 
