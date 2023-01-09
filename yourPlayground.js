@@ -202,11 +202,11 @@ class Bank {
   }
 }
 
-chinmay = new Bank(100)
-chinmay.balance()
-chinmay.withdraw(50)
-chinmay.deposit(100)
-chinmay.deposit(500)
-chinmay.balance()
-chinmay.withdraw(50)
-chinmay.withdraw(1000)
+// chinmay = new Bank(100)
+// chinmay.balance()
+// chinmay.withdraw(50)
+// chinmay.deposit(100)
+// chinmay.deposit(500)
+// chinmay.balance()
+// chinmay.withdraw(50)
+// chinmay.withdraw(1000)

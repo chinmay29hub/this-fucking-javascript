@@ -6,14 +6,12 @@
  */
 
 // API_KEY for maps api
-let API_KEY = "a8e71c9932b20c4ceb0aed183e6a83bb";
+let API_KEY = "your_api_key_here";
 
 /**
  * Retrieve weather data from openweathermap
  * HINT: Use fetch()
  * HINT: URL should look like this: 
- * https://api.openweathermap.org/data/2.5/weather?q=detroit&appid=a8e71c9932b20c4ceb0aed183e6a83bb&units=imperial
- */
 const getWeatherData = (city) => {
   const URL = "https://api.openweathermap.org/data/2.5/weather";
   const FULL_URL = `${URL}?q=${city}&appid=${API_KEY}&units=imperial`
