@@ -6,10 +6,9 @@
 
 <h2 align="center">
 
-[Homepage](https://chinmay29hub.github.io/this-fucking-javascript/)
+[Visit Homepage](https://chinmay29hub.github.io/this-fucking-javascript/)
 
 </h2>
-<br>
 
 ## Some hysterical projects I fucked-up :
 
