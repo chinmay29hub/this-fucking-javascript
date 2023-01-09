@@ -1,4 +1,4 @@
-# this-fucking-javascript
+# this-fucking-javascript 🖕
 
 <p align="center">
 <img src="fcuk.gif" alt="this fucking javascript" width=450>
@@ -10,7 +10,7 @@
 
 </h2>
 
-## Some hysterical projects I fucked-up :
+## Some hysterical projects I fucked-up 😎
 
 <details>
 <summary>Red-Yellow-Green Squares</summary>
