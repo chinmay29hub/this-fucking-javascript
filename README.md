@@ -75,4 +75,9 @@
 
 </details>
 
+<details>
+<summary>Face Detection - Detect Faces & Emotions</summary>
 
+10. [Face Detection - Detect Faces & Emotions](https://chinmay29hub-face-detection.netlify.app/)
+
+</details>
